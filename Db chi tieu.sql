@@ -2,6 +2,7 @@ create database dbExpense
 go
 use dbExpense
 go
+
 create table tblUser(
 idUser int identity(1,1) primary key,
 name varchar(100) not null,
@@ -20,4 +21,6 @@ go
 create table tblDetail(
 	idDt int identity(1,1) primary key,
 	nameProduct varchar(100),
+
+
 )
