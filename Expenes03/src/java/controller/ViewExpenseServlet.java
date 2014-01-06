@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.DataProcess;
 
 /**
@@ -35,6 +36,7 @@ public class ViewExpenseServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         DataProcess dp = new DataProcess();
         String action= request.getParameter("action");
+        HttpSession session = request.getSession();
         if(action.equals("login")){
             String id=request.getParameter("user");
             String pass=request.getParameter("pass");
@@ -42,11 +44,11 @@ public class ViewExpenseServlet extends HttpServlet {
             user.setUser(id);
             user.setPasss(pass);
             if(dp.login(user)){
+                session.setAttribute("list", dp.getData());
             response.sendRedirect("home.jsp");
             }else{
             response.sendRedirect("home.jsp");
-            }
-            
+            }  
         }
 //        try {
 //            /* TODO output your page here. You may use following sample code. */

@@ -25,11 +25,12 @@ create table tblExpense(
 go
 create table tblDetail(
 	idEx int identity(1,1) primary key,
-	nameProduct varchar(100),
-	price float,
+	namePrfoduct varchar(100),
+	price loat,
 	constraint FK_Expense_Detail foreign key(idEx) references tblExpense(idEx)
 ) 
 go
+insert into tblExpense values(1,getdate(),100,0)
 -- drop table tblDetail
 --drop table tblExpense
 select * from tblUser
@@ -40,4 +41,10 @@ create proc log(@user varchar(20), @pass varchar(100))
 as
 begin
 select * from tblUser where _user=@user and _pass=@pass
+end
+go 
+create proc getData
+as
+begin
+select * from tblExpense
 end

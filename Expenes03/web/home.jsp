@@ -17,8 +17,16 @@
         <table border="1">
             <tr>
                 <td>ID</td>
-                <td></td>
+                <td>name</td>
+                <td>date</td>
+                <td>price</td>
             </tr>
+            <c:forEach var="p" items="${sessionScope.list}">
+                <td>${p.idEx}</td>
+                <td>${p.idUse}</td>
+                <td>${p.date}</td>
+                <td>${p.totalAmount}</td>
+            </c:forEach>
         </table>
             
     </body>

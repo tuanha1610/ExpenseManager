@@ -11,7 +11,7 @@ package entity;
 public class Expenes {
 
     private int idEx;
-    private String idUse;
+    private int idUse;
     private String username;
     private String date;
     private float totalAmount;
@@ -25,11 +25,11 @@ public class Expenes {
         this.idEx = idEx;
     }
 
-    public String getIdUse() {
+    public int getIdUse() {
         return idUse;
     }
 
-    public void setIdUse(String idUse) {
+    public void setIdUse(int idUse) {
         this.idUse = idUse;
     }
 
